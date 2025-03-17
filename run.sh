@@ -1,16 +1,17 @@
 #!/bin/bash
 
-IMAGE_NAME="ricerca-file"
-CONTAINER_NAME="ricerca-file-container"
+IMAGE_NAME="keyword-search"
+CONTAINER_NAME="keyword-search-container"
 
 # Controlla se l'immagine Docker esiste già
 if ! docker images | grep -q "$IMAGE_NAME"; then
-    echo "🔨 Costruzione dell'immagine Docker..."
+    echo "🔨 Building docker image..."
     docker build -t "$IMAGE_NAME" .
+    echo "✅ Docker image built."
 else
-    echo "✅ L'immagine Docker esiste già."
+    echo "✅ Docker image already exists."
 fi
 
 # Esegui il container
-echo "🚀 Avvio del container..."
+echo "🚀 Starting container..."
 docker run -it --rm -v "$(pwd)":/app "$IMAGE_NAME"
