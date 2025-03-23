@@ -15,4 +15,4 @@ RUN ls
 
 
 # Default command for execute the script 
-CMD ["python", "src/main.py", "pippo", "enviromentWithSomeFile/", "outputPythonSearch/"]
+CMD ["python", "src/main.py", "pippo", "enviromentWithSomeFile/", "outputPythonSearch/", "INFO"]
