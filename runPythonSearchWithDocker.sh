@@ -1,7 +1,7 @@
 #!/bin/bash
 
-IMAGE_NAME="keyword-search"
-CONTAINER_NAME="keyword-search-container"
+IMAGE_NAME="python-search"
+CONTAINER_NAME="python-search-container"
 
 # Controlla se l'immagine Docker esiste già
 if ! docker images | grep -q "$IMAGE_NAME"; then
@@ -14,4 +14,5 @@ fi
 
 # Esegui il container
 echo "🚀 Starting container..."
-docker run -it --rm -v "$(pwd)":/app "$IMAGE_NAME"
+# docker run -it --rm "$IMAGE_NAME"
+docker run -it --rm "$IMAGE_NAME"
